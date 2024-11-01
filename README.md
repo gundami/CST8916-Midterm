@@ -13,10 +13,15 @@ This is a simple RESTful API built with the FastAPI framework that supports basi
 ## Project Structure
 
 . ├── main.py
+
   ├── models.py 
+
   ├── schemas.py
+
   ├── database.py
+
   ├── requirements.txt
+
   └── README.md
 
 ## Environment Setup
@@ -32,20 +37,25 @@ cd <repository_directory>
 
 Create and activate a virtual environment in the project root directory:
 
+```shell
 python3 -m venv venv
 
 source venv/bin/activate # Linux/macOS
 
 venv\Scripts\activate   # Windows
+```
 
 ### 3. Install Dependencies
 
+```sh
 pip install -r requirements.txt
+```
+
 ### 4. Configure the Database
 
 In the `database.py` file, configure your MySQL database connection:
 
-DATABASE_URL = "mysql+pymysql://<username>:<password>@<host>/<database_name>"
+`DATABASE_URL = "mysql+pymysql://<username>:<password>@<host>/<database_name>"`
 
 Ensure you have created the corresponding database in MySQL.
 
@@ -53,7 +63,7 @@ Ensure you have created the corresponding database in MySQL.
 
 ### 1. Start the FastAPI Application
 
-uvicorn main:app --reload
+`uvicorn main:app --reload`
 
 ### 2. Access the API Documentation
 
@@ -77,7 +87,3 @@ Open your browser and visit `http://127.0.0.1:8000/docs` to see an interactive S
 ## Contributing
 
 Contributions are welcome! Please fork this repository and submit a PR.
-
-## License
-
-This project is licensed under the MIT License.
