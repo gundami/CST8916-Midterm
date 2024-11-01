@@ -2,6 +2,7 @@ from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 import models, schemas
 from database import SessionLocal, engine
+import uvicorn
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -53,3 +54,6 @@ def delete_student(student_id: int, db: Session = Depends(get_db)):
     db.delete(db_student)
     db.commit()
     return {"detail": "Student deleted"}
+
+if __name__ == '__main__':
+    uvicorn.run('main:app', host='0.0.0.0', port=8000)
